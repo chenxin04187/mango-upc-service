@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>mango-upc</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>mango-upc-common</module>
+        <module>mango-upc-boot</module>
+        <module>mango-upc-user-mgt</module>
+        <module>mango-upc-rpc</module>
+        <module>mango-upc-rpc/mango-upc-rpc-user</module>
+        <module>mango-upc-rpc/mango-upc-rpc-api</module>
+        <module>mango-upc-common-model</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <artifactId>lombok</artifactId>
+                            <groupId>org.projectlombok</groupId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+                <groupId>org.springframework.boot</groupId>
+            </plugin>
+            <!-- 需要时，去掉注释，否则门禁过不去 -->
+<!--            <plugin>-->
+<!--                <groupId>org.mybatis.generator</groupId>-->
+<!--                <artifactId>mybatis-generator-maven-plugin</artifactId>-->
+<!--                <version>1.4.2</version>-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <artifactId>postgresql</artifactId>-->
+<!--                        <groupId>org.postgresql</groupId>-->
+<!--                        <version>42.3.6</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>Generate MyBatis Artifacts</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash;允许移动生成的文件 &ndash;&gt;-->
+<!--                    <verbose>true</verbose>-->
+<!--                    &lt;!&ndash; 是否覆盖 &ndash;&gt;-->
+<!--                    <overwrite>false</overwrite>-->
+<!--                    &lt;!&ndash; 自动生成的配置 &ndash;&gt;-->
+<!--                    <configurationFile>src/main/resources/mybatis-generater.xml</configurationFile>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+    
+    <properties>
+        <jasypt-spring-boot-starter.version>3.0.5</jasypt-spring-boot-starter.version>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <artifactId>spring-boot-starter-batch</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <!-- 添加参数加密 -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>${jasypt-spring-boot-starter.version}</version>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <groupId>org.mybatis.spring.boot</groupId>
+        </dependency>
+        <dependency>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <groupId>com.alibaba</groupId>
+        </dependency>
+        
+        <dependency>
+            <artifactId>spring-boot-devtools</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <optional>true</optional>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <artifactId>postgresql</artifactId>
+            <groupId>org.postgresql</groupId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <artifactId>lombok</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <artifactId>spring-batch-test</artifactId>
+            <groupId>org.springframework.batch</groupId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- swagger3.0.0 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        
+        
+        <dependency>
+            <artifactId>commons-lang3</artifactId>
+            <groupId>org.apache.commons</groupId>
+        </dependency>
+    </dependencies>
+    <description>分布式用户权限管理中心</description>
+    <groupId>com.tobehonor</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <name>mango-upc</name>
+    <parent>
+        <artifactId>mango-upc-parent</artifactId>
+        <groupId>com.tobehonor</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+    <!-- 修改application.properties中的mango.upc.version值时，要同步修改这个值，反之亦然 -->
+    <version>0.0.1-SNAPSHOT</version>
+
+</project>
