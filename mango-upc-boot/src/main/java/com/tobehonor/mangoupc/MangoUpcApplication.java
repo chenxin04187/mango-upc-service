@@ -4,11 +4,11 @@ import com.tobehonor.mangoupc.banner.MangoUpcSingleBanner;
 import com.tobehonor.mangoupc.common.env.BannerModeSettingFactory;
 import com.tobehonor.mangoupc.common.env.BannerModeStrategy;
 import com.tobehonor.mangoupc.common.env.EnvironmentType;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -20,7 +20,7 @@ import java.util.Map;
  * @author William Chen
  * @since 2022/8/6
  */
-@EnableOpenApi
+@EnableDubbo
 @SpringBootApplication
 @MapperScan("com.tobehonor.mangoupc.persistence.dao")
 @EnableDiscoveryClient

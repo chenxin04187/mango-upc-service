@@ -17,7 +17,7 @@ import java.util.Map;
 /**
  * druid配置
  *
- * @author William Chen
+ * @author William Chan
  * @since 2022/8/6
  */
 @Configuration

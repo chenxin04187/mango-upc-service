@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 获取Spring容器中的bean
  *
- * @author William Chen
+ * @author William Chan
  * @since 2022/8/6
  */
 @Component

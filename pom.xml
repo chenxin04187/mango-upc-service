@@ -7,9 +7,6 @@
         <module>mango-upc-common</module>
         <module>mango-upc-boot</module>
         <module>mango-upc-user-mgt</module>
-        <module>mango-upc-rpc</module>
-        <module>mango-upc-rpc/mango-upc-rpc-user</module>
-        <module>mango-upc-rpc/mango-upc-rpc-api</module>
         <module>mango-upc-common-model</module>
     </modules>
     <build>
@@ -126,14 +123,13 @@
             <scope>test</scope>
         </dependency>
         
-        <!-- swagger3.0.0 -->
+        <!-- springdoc -->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.7.0</version>
         </dependency>
-        
-        
+    
         <dependency>
             <artifactId>commons-lang3</artifactId>
             <groupId>org.apache.commons</groupId>

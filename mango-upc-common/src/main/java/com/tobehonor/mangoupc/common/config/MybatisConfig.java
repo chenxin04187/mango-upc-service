@@ -40,7 +40,7 @@ public class MybatisConfig {
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
-        mapperScannerConfigurer.setBasePackage("com.tobehonor.mangoupc.dao");
+        mapperScannerConfigurer.setBasePackage("com.tobehonor.mangoupc.*.dao");
         return mapperScannerConfigurer;
     }
 }

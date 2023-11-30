@@ -39,14 +39,9 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- 为开发测试使用，依赖mango-upc-rpc全包，实际只需要引入生产者包即可，如下所示 -->
-<!--        <dependency>-->
-<!--            <groupId>com.tobehonor</groupId>-->
-<!--            <artifactId>mango-upc-user-service</artifactId>-->
-<!--            <version>0.0.1-SNAPSHOT</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.tobehonor</groupId>
-            <artifactId>mango-upc-rpc-user</artifactId>
+            <artifactId>mango-upc-rpc-user-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
